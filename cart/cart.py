@@ -51,7 +51,7 @@ class Cart(object):
 
     def __iter__(self):
         """
-        Iterate over items in the cart and get the products form the database
+        Iterate over items in the cart and get the products from the database
         :return:
         """
         product_ids = self.cart.keys()
