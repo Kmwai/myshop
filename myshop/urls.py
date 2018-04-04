@@ -13,16 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+admin.site.site_title = 'Main'
+admin.site.site_header = 'Shop Admin Dashboard'
+admin.site.index_title = 'Shop Portal'
+
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^cart/', include('cart.urls', namespace='cart')),
-    url(r'^orders/', include('orders.urls', namespace='orders')),
-    url(r'^paypal/', include('paypal.standard.ipn.urls')),
-    url(r'^payment/', include('payment.urls', namespace='payment')),
-    url(r'^', include('shop.urls', namespace='shop')),
+    path('admin/', admin.site.urls),
+    path('cart/', include('cart.urls', namespace='cart')),
+    path('orders/', include('orders.urls', namespace='orders')),
+    path('paypal/', include('paypal.standard.ipn.urls')),
+    path('payment/', include('payment.urls', namespace='payment')),
+    path('', include('shop.urls', namespace='shop')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
