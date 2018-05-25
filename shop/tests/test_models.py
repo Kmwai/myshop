@@ -4,5 +4,4 @@ from shop.models import Category
 
 
 class CategoryModelTest(TestCase):
-
-
+    pass

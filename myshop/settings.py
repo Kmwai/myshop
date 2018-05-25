@@ -25,7 +25,7 @@ SECRET_KEY = '@pp3%3e%dw29fflui5r=-7u#^1eh(@$f_g46(d3@9$2dgv5hau'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['80e0dc44.ngrok.io', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -134,5 +134,5 @@ CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # django-paypal settings
-PAYPAL_RECEIVER_EMAIL = 'lmwa90@gmail.com'
+PAYPAL_RECEIVER_EMAIL = 'lmwai90@gmail.com'
 PAYPAL_TEST = True
